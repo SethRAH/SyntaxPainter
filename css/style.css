@@ -1,0 +1,99 @@
+
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+}
+
+h2 {
+    font-size: 24 px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600px;
+    margin-bottom: 30px;
+}
+
+h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.jumbotron {
+    background-color: #6600ff; /*Orange*/
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.fa.logo {
+    font-size: 200px;
+    color: #6600ff;
+}
+
+.fa.logo-label {
+    color: #6600ff;
+}
+
+.fa.logo-small {
+    color: #6600ff;
+    font-size: 50px;
+}
+
+.logo-col {
+    margin: 25px 0px;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #6600ff; /*Purple*/
+    color: #fff;
+    border-color: #4700b3;
+}
+
+.btn-primary.active, .btn-primary:hover {
+    background-color: #4700b3;
+    color: #fff;
+    border-color: #4700b3;
+}
+
+.btn-primary.active:hover {
+    background-color: #330080;
+    color: #fff;
+    border-color: #4700b3;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+.navbar {
+    background-color: #6600ff;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+.navbar li a, .navbar .navbar-brand{
+    color: #fff !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #6600ff !important;
+    background-color: #fff !important;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
