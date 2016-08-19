@@ -33,6 +33,8 @@
                 case "sql":
                     //not yet supported
                     break;
+                default:
+                    break;
             }
         }
 
