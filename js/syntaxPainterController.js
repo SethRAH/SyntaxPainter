@@ -16,7 +16,7 @@
             switch(vm.language){
                 case "xml":
                     //do some xml painting (right now just copying the message)
-                    vm.outputSource = vm.inputSource;
+                    vm.outputSource = paintXML.highlightXML(vm.inputSource);
                     break;
                 case "json":
                     //not yet supported
