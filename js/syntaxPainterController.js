@@ -2,51 +2,45 @@
     "use strict";
 
     angular.module("app-syntaxpainter")
-        .controller("syntaxPainterController", syntaxPainterController);
+        .controller("syntaxPainterController", ['$scope','$sce',syntaxPainterController]);
 
-    function syntaxPainterController(){
+    function syntaxPainterController($scope, $sce){
         var vm = this;
 
         vm.inputSource = "";
-        vm.outputSource = "";
 
-        vm.language = "xml";
+        vm.language = "";
+
+        vm.deliberatelyTrustHtml = function(html){
+            return $sce.trustAsHtml(html);
+        };
 
         vm.highlightSyntax = function(){
-            switch(vm.language){
-                case "xml":
-                    //do some xml painting (right now just copying the message)
-                    vm.outputSource = paintXML.highlightXML(vm.inputSource);
-                    break;
-                case "json":
-                    //not yet supported
-                    break;
-                case "javascript":
-                    //not yet supported
-                    break;
-                case "java":
-                    //not yet supported
-                    break;
-                case "cSharp":
-                    //not yet supported
-                    break;
-                case "sql":
-                    //not yet supported
-                    break;
-                default:
-                    break;
-            }
+            $('pre code').each(function(i, block){
+                hljs.highlightBlock(block);
+            }); 
         }
 
         vm.copyOutput = function(){
             window.clipboardData.setData("Text", vm.outputSource);
         }
-        vm.setLanguage = function(language){
-            vm.language = language;
-        }
+        
         vm.clearEverything = function(){
             vm.inputSource = "";
             vm.outputSource = "";
+            $('pre code').each(function(i, block){
+                $(this).removeClass('hljs');
+                $(this).removeClass('cs');
+                $(this).removeClass('cpp');
+                $(this).removeClass('css');
+                $(this).removeClass('html');
+                $(this).removeClass('http');
+                $(this).removeClass('json');
+                $(this).removeClass('java');
+                $(this).removeClass('js');
+                $(this).removeClass('sql');
+                $(this).removeClass('xml');
+            });
         }
     }
 })();

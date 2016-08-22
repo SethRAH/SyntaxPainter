@@ -22,7 +22,7 @@ h4 {
 }
 
 .jumbotron {
-    background-color: #6600ff; /*Orange*/
+    background-color: #1d1f21; 
     color: #fff;
     padding: 100px 25px;
     font-family: Montserrat, sans-serif;
@@ -34,15 +34,15 @@ h4 {
 
 .fa.logo {
     font-size: 200px;
-    color: #6600ff;
+    color: #1d1f21;
 }
 
 .fa.logo-label {
-    color: #6600ff;
+    color: #1d1f21;
 }
 
 .fa.logo-small {
-    color: #6600ff;
+    color: #1d1f21;
     font-size: 50px;
 }
 
@@ -52,21 +52,21 @@ h4 {
 }
 
 .btn-primary {
-    background-color: #6600ff; /*Purple*/
+    background-color: #1d1f21; /*dark grey*/
     color: #fff;
-    border-color: #4700b3;
+    border-color: #1f1f1f;
 }
 
 .btn-primary.active, .btn-primary:hover {
-    background-color: #4700b3;
+    background-color: #1f1f1f;
     color: #fff;
-    border-color: #4700b3;
+    border-color: #1f1f1f;
 }
 
 .btn-primary.active:hover {
     background-color: #330080;
     color: #fff;
-    border-color: #4700b3;
+    border-color: #1f1f1f;
 }
 
 .bg-grey {
@@ -74,7 +74,7 @@ h4 {
 }
 
 .navbar {
-    background-color: #6600ff;
+    background-color: #1d1f21;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -89,11 +89,15 @@ h4 {
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #6600ff !important;
+    color: #1d1f21 !important;
     background-color: #fff !important;
 }
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
     color: #fff !important;
+}
+
+pre {
+    background-color: #1d1f21;
 }
