@@ -32,6 +32,24 @@
             <div data-ng-controller="syntaxPainterController as vm">
                 <form class="form" novalidate name="syntaxPainterForm" data-ng-submit="vm.highlightSyntax()">
                     <div class="form-group">
+                        <label class="control-label">Language</label>
+                        <div>
+                            <select class="form-control" data-ng-model="vm.language">
+                                <option value="">Auto-Detect</option>
+                                <option value="cpp">C++</option>
+                                <option value="cs">C#</option>
+                                <option value="css">CSS</option>
+                                <option value="html">HTML</option>
+                                <option value="http">HTTP</option>
+                                <option value="java">Java</option>
+                                <option value="js">JavaScript</option>
+                                <option value="json">JSON</option>
+                                <option value="sql">SQL</option>
+                                <option value="xml">XML</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="control-label">Input Code</label>
                         <div>
                             <textarea class="form-control" id="taInputSyntaxSource" rows="10" data-ng-model="vm.inputSource"></textArea>
