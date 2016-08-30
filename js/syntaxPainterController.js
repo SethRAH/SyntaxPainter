@@ -2,18 +2,33 @@
     "use strict";
 
     angular.module("app-syntaxpainter")
-        .controller("syntaxPainterController", ['$scope','$sce',syntaxPainterController]);
+        .controller("syntaxPainterController", ['$scope','cssInjector',syntaxPainterController]);
 
-    function syntaxPainterController($scope, $sce){
+    function syntaxPainterController($scope, cssInjector){
         var vm = this;
 
         vm.inputSource = "";
 
         vm.language = "";
 
-        vm.deliberatelyTrustHtml = function(html){
-            return $sce.trustAsHtml(html);
-        };
+        vm.style = "hybrid";
+
+        cssInjector.add("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/hybrid.light.min.css");
+        cssInjector.add("./css/hybridAccompany.css");
+
+        vm.styles = [{
+                "name": "hybrid", 
+                "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/hybrid.min.css",
+                "siteCss": "./css/hybridAccompany.css" },
+            {
+                "name": "kimbieLight", 
+                "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/kimbie.light.min.css",
+                "siteCss": "./css/kimbieLightAccompany.css" },
+            {
+                "name": "vs", 
+                "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/vs.min.css",
+                "siteCss": "./css/vsAccompany.css" }
+        ];
 
         vm.highlightSyntax = function(){
             $('pre code').each(function(i, block){
@@ -22,6 +37,16 @@
                 hljs.highlightBlock(block);
             }); 
         }
+
+        vm.changeStyle = function(styleName){
+            var styleObject = utility.filterArray(vm.styles, function(itm){return itm.name === styleName;});
+            if(styleObject.length > 0){
+                cssInjector.removeAll();
+                cssInjector.add(styleObject[0].hljsCss);
+                cssInjector.add(styleObject[0].siteCss);
+                vm.style = styleName;
+            }
+        };
 
         vm.copyOutput = function(){
             window.clipboardData.setData("Text", vm.outputSource);

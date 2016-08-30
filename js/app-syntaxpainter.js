@@ -1,5 +1,5 @@
 (function(){
         "use strict";
 
-        angular.module("app-syntaxpainter",['ngSanitize'])
+        angular.module("app-syntaxpainter",['angular.css.injector'])
 })();

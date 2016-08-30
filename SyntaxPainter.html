@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="app-syntaxpainter">
   <head>
     <meta charset="utf-8">
     <title>Syntax Painter</title>
@@ -28,7 +28,7 @@
         <h3>Color Your Code</h3>
     </div>
     <div class="container">
-        <div data-ng-app="app-syntaxpainter">
+        <div>
             <div data-ng-controller="syntaxPainterController as vm">
                 <form class="form" novalidate name="syntaxPainterForm" data-ng-submit="vm.highlightSyntax()">
                     <div class="form-group">
@@ -69,9 +69,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label">Highlighted Output</label>
+                        <div class="row">
+                            <label class="control-label col-sm-4">Highlighted Output</label>
+                            <div class="col-sm-8">
+                                <label class="control-label">Color Scheme:&nbsp;&nbsp;</label>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'hybrid'}" data-ng-click="vm.changeStyle('hybrid')"><i class="fa fa-moon-o fa-fw"></i></button>
+                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'kimbieLight'}" data-ng-click="vm.changeStyle('kimbieLight')"><i class="fa fa-sun-o fa-fw"></i></button>
+                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'vs'}" data-ng-click="vm.changeStyle('vs')"><i class="fa fa-cube fa-fw"></i></button>
+                                </div>
+                            </div>
+                        </div>
                         <pre id="preOutputSyntaxHighlight"><code data-ng-bind="vm.inputSource"></code></pre>
-                    </div>
+                   </div>
                     <div class="form-group">
                         <button class="btn btn-default" data-ng-click="vm.clearEverything()"><i class="fa fa-eraser fa-fw"></i></button>
                         <button class="btn btn-primary" type="submit"><i class="fa fa-tint fa-fw"></i></button>
@@ -85,7 +95,7 @@
         <a href="#" title="To Top">
             <i class="fa fa-chevron-circle-up fa-lg logo-label"></i>
         </a>
-        <p>Syntax Painter was made possible by <a href="https://angularjs.org/">AngularJS</a> and <a href="https://highlightjs.org/">highlight.js</a></p>
+        <p>Syntax Painter was made possible by <a href="https://angularjs.org/">AngularJS</a>, <a href="https://highlightjs.org/">highlight.js</a>, and <a href="https://github.com/GabrielDelepine/angular-css-injector">Angular-css-injector</a></p>
         <p>Check out the latest version and contribute at <a href="https://github.com/SethRAH/SyntaxPainter"><i class="fa fa-github-alt fa-fw"></i> SyntaxPainter</a></p>
     </footer> <!-- /Third Container (footer) -->
     <!-- Javascript Section -->
@@ -94,6 +104,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-sanitize.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./lib/angular-css-injector.min.js"></script>
+    <script type="text/javascript" src="./js/utility.js"></script>
     <script type="text/javascript" src="./js/app-syntaxpainter.js"></script>
     <script type="text/javascript" src="./js/syntaxPainterController.js"></script>
     <script type="text/javascript">
