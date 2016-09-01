@@ -74,9 +74,11 @@
                             <div class="col-sm-8">
                                 <label class="control-label">Color Scheme:&nbsp;&nbsp;</label>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'hybrid'}" data-ng-click="vm.changeStyle('hybrid')"><i class="fa fa-moon-o fa-fw"></i></button>
-                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'kimbieLight'}" data-ng-click="vm.changeStyle('kimbieLight')"><i class="fa fa-sun-o fa-fw"></i></button>
-                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'vs'}" data-ng-click="vm.changeStyle('vs')"><i class="fa fa-cube fa-fw"></i></button>
+                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'hybrid'}" data-ng-click="vm.changeStyle('hybrid')" title='hybrid'><i class="fa fa-moon-o fa-fw"></i></button>
+                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'kimbieLight'}" data-ng-click="vm.changeStyle('kimbieLight')" title='kimbie light'><i class="fa fa-sun-o fa-fw"></i></button>
+                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'vs'}" data-ng-click="vm.changeStyle('vs')" title='vs'><i class="fa fa-cube fa-fw"></i></button>
+                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'dracula'}" data-ng-click="vm.changeStyle('dracula')" title='dracula'><i class="fa fa-user-secret fa-fw"></i></button>
+                                    <button type="button" class="btn btn-sm btn-default" data-ng-class="{'active': vm.style == 'atelierSulphurpoolDark'}" data-ng-click="vm.changeStyle('atelierSulphurpoolDark')" title='atelier sulphurpool dark'><i class="fa fa-rocket fa-fw"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +86,7 @@
                    </div>
                     <div class="form-group">
                         <button class="btn btn-default" data-ng-click="vm.clearEverything()"><i class="fa fa-eraser fa-fw"></i></button>
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-tint fa-fw"></i></button>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-paint-brush fa-fw"></i></button>
                    </div>
                 </form>
             </div>

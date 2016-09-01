@@ -13,10 +13,18 @@
 
         vm.style = "hybrid";
 
-        cssInjector.add("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/hybrid.light.min.css");
+        cssInjector.add("https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/hybrid.min.css");
         cssInjector.add("./css/hybridAccompany.css");
 
         vm.styles = [{
+                "name": "atelierSulphurpoolDark", 
+                "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/atelier-sulphurpool.dark.min.css",
+                "siteCss": "./css/atelierSulphurpoolDarkAccompany.css" },
+            {
+                "name": "dracula", 
+                "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/dracula.min.css",
+                "siteCss": "./css/draculaAccompany.css" },
+            {
                 "name": "hybrid", 
                 "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/hybrid.min.css",
                 "siteCss": "./css/hybridAccompany.css" },
@@ -47,10 +55,6 @@
                 vm.style = styleName;
             }
         };
-
-        vm.copyOutput = function(){
-            window.clipboardData.setData("Text", vm.outputSource);
-        }
 
         function clearHighlightingClasses($block){
             $block.removeClass('hljs');
