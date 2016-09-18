@@ -25,6 +25,10 @@
                 "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/dracula.min.css",
                 "siteCss": "./css/draculaAccompany.css" },
             {
+                "name": "github", 
+                "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css",
+                "siteCss": "./css/githubAccompany.css" },
+            {
                 "name": "hybrid", 
                 "hljsCss": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/hybrid.min.css",
                 "siteCss": "./css/hybridAccompany.css" },
@@ -128,6 +132,8 @@
             $block.removeClass('xsd');
             $block.removeClass('xsl');
             $block.removeClass('plist');
+            $block.removeClass('typescript');
+            $block.removeClass('ts');
         }
         
         vm.clearEverything = function(){
