@@ -37,6 +37,7 @@ Additionally, I noticed it felt a little weird copying the dark styled code into
 * Python
 * Ruby
 * SQL
+* TypeScript
 * XML
 
 #### Why did you choose those languages?
